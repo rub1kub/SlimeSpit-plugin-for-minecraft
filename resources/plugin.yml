@@ -1,0 +1,7 @@
+name: SlimeSpit
+main: slimespit.slimespit.SlimeSpit
+version: 1.0
+commands:
+  spit:
+    description: Spit at the player
+    usage: /spit <player>
