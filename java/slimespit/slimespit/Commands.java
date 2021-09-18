@@ -26,7 +26,7 @@ public class Commands implements CommandExecutor {
             Player recPlayer = Bukkit.getPlayer(name);
             Player sendPlayer = (Player)commandSender;
             if (recPlayer == null) {
-                commandSender.sendMessage(name + " не онлайн!");
+                commandSender.sendMessage(name + " " + plugin.getConfig().getString("messages.commands.dontonline").replace("&","§"));
                 return true;
             } else {
                 assert sendPlayer != null;
@@ -35,7 +35,7 @@ public class Commands implements CommandExecutor {
                 Location recLoc = recPlayer.getLocation();
                 double distance = sendLoc.distance(recLoc);
                 if (distance >= 5.0D) {
-                    sendPlayer.sendMessage(ChatColor.RED + name + " стоит слишком далеко ");
+                    sendPlayer.sendMessage(ChatColor.RED + name + " " + plugin.getConfig().getString("messages.commands.toofaraway").replace("&","§"));
                     return true;
                 } else {
                     double radius = 100.0D;
@@ -44,7 +44,7 @@ public class Commands implements CommandExecutor {
                     for(Iterator var15 = Bukkit.getOnlinePlayers().iterator(); var15.hasNext(); p.playSound(p.getLocation(), Sound.ENTITY_LLAMA_SPIT, 1.0F, 1.0F)) {
                         p = (Player)var15.next();
                         if (p.getLocation().distance(sendLoc) < radius) {
-                            p.sendMessage(ChatColor.YELLOW + sendPlayer.getName() + ChatColor.GRAY + " харкнул в " + ChatColor.YELLOW + recPlayer.getName());
+                            p.sendMessage(ChatColor.YELLOW + sendPlayer.getName() + ChatColor.GRAY + " " + plugin.getConfig().getString("messages.commands.spit".replace("&","§")) + " " + ChatColor.YELLOW + recPlayer.getName());
                         }
                     }
 
