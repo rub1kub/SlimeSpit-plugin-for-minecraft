@@ -1,7 +1,11 @@
 name: SlimeSpit
 main: slimespit.slimespit.SlimeSpit
-version: 1.0
+version: 2.0
 commands:
   spit:
     description: Spit at the player
     usage: /spit <player>
+  spitreload:
+    description: reload config file
+    usage: /spitreload
+    permission: spit.reload

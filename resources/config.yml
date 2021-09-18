@@ -1,0 +1,7 @@
+messages:
+  commands:
+    dontonline: "&cDon't online" #игрок не в сети
+    toofaraway: "Too far away!" #игрок слишком далеко
+    spit: "spat at" #харькнул в
+    reload: "&aСonfig reloaded!" #конфиг перезагружен
+    donthaveperrm: "&cYou don't have permission to this command" #у тебя нет прав для этой команды
